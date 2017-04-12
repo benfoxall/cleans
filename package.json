@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "git@github.com:benfoxall/cleans.git",
   "author": "Ben Foxall <benfoxall@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "test": "tape tests/*"
+  }
 }
