@@ -1,0 +1,9 @@
+{
+  "name": "cleans",
+  "version": "1.0.0",
+  "description": "A tool for cleaning up js objects",
+  "main": "index.js",
+  "repository": "git@github.com:benfoxall/cleans.git",
+  "author": "Ben Foxall <benfoxall@gmail.com>",
+  "license": "MIT"
+}
