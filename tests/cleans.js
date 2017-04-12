@@ -16,3 +16,19 @@ test('basic api', t => {
   t.equal(c.delete(), c)
   t.equal(c.map(), c)
 })
+
+
+test('delete', t => {
+  t.plan(1)
+
+  const obj = {
+    a:'a',
+    b:'b'
+  }
+
+  cleans(obj)
+    .delete('b')
+
+  t.deepEqual(obj, {a:'a'})
+
+})
