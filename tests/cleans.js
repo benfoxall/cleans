@@ -71,3 +71,30 @@ test('map', t => {
   t.deepEqual(obj, {a:'a', b: 20, c: {d: 200}})
 
 })
+
+
+test('array support', t => {
+  t.plan(1)
+
+  const obj = {
+    a:'a',
+    b:[
+      {c: 1, d: 2},
+      {c: 3, d: 4}
+    ]
+  }
+
+  cleans(obj)
+    .delete('b.c')
+    .map('b.d', v => v * 2)
+
+
+  t.deepEqual(obj, {
+    a:'a',
+    b:[
+      {d: 4},
+      {d: 8}
+    ]
+  })
+
+})

@@ -3,11 +3,18 @@ const isObject = require('is-object')
 const forEachObj = (obj, fn, prefix) => {
   prefix = prefix || ''
 
+  if(!isObject) return
+
   Object.keys(obj)
     .forEach(key => {
       fn(prefix + key, obj, key)
       if(isObject(obj[key])) {
         forEachObj(obj[key], fn, key + '.')
+      }
+      if(Array.isArray(obj[key])) {
+        obj[key].forEach(item => {
+          forEachObj(item, fn, key + '.')
+        })
       }
     })
 }
