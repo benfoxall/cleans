@@ -24,7 +24,14 @@ const cleans = (obj) => {
       })
       return wrapper
     },
-    map:    () => wrapper
+    map: (pattern, fn) => {
+      forEachObj(obj, (key, subObj, subKey) => {
+        if(key === pattern) {
+          subObj[subKey] = fn(subObj[subKey])
+        }
+      })
+      return wrapper
+    },
   }
 
   return wrapper

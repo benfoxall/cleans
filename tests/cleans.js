@@ -50,3 +50,24 @@ test('delete nested', t => {
   t.deepEqual(obj, {a: {c: 'c'}})
 
 })
+
+
+
+test('map', t => {
+  t.plan(1)
+
+  const obj = {
+    a:'a',
+    b:2,
+    c: {
+      d: '2'
+    }
+  }
+
+  cleans(obj)
+    .map('b', v => parseFloat(v) * 10)
+    .map('c.d', v => parseFloat(v) * 100)
+
+  t.deepEqual(obj, {a:'a', b: 20, c: {d: 200}})
+
+})
