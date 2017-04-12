@@ -1,6 +1,9 @@
 # cleans
-A tool for cleaning up js objects
 
+[![Build
+Status](https://travis-ci.org/benfoxall/cleans.svg?branch=master)](https://travis-ci.org/benfoxall/cleans)
+
+A tool for cleaning up js objects
 
 ```js
 const cleans = require('cleans')
