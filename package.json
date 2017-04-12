@@ -11,5 +11,8 @@
   },
   "scripts": {
     "test": "tape tests/*"
+  },
+  "dependencies": {
+    "is-object": "^1.0.1"
   }
 }

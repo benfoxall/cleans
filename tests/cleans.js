@@ -32,3 +32,21 @@ test('delete', t => {
   t.deepEqual(obj, {a:'a'})
 
 })
+
+
+test('delete nested', t => {
+  t.plan(1)
+
+  const obj = {
+    a: {
+      b: 'b',
+      c: 'c'
+    }
+  }
+
+  cleans(obj)
+    .delete('a.b')
+
+  t.deepEqual(obj, {a: {c: 'c'}})
+
+})
