@@ -3,7 +3,7 @@ const isObject = require('is-object')
 const forEachObj = (obj, fn, prefix) => {
   prefix = prefix || ''
 
-  if(!isObject) return
+  if(!isObject(obj)) return
 
   Object.keys(obj)
     .forEach(key => {
